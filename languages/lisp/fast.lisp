@@ -11,7 +11,4 @@
 (deftype vint63 () '(simple-array int63))
 
 (defmacro swapf (a b)
-  (let ((tmp (gensym)))
-    `(let ((,tmp ,a))
-       (setf ,a ,b)
-       (setf ,b ,tmp))))
+  `(rotatef ,a ,b))
